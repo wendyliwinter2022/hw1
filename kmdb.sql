@@ -21,6 +21,7 @@
 --   model/table. Also, include DROP TABLE IF EXISTS statements for each
 --   table, so that each run of this script starts with a blank database.
 --   (10 points)
+CREATE TABLE
 -- - Insertion of "Batman" sample data into tables (5 points)
 -- - Selection of data, so that something similar to the following sample
 --   "report" can be achieved (5 points)
