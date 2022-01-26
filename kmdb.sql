@@ -65,7 +65,7 @@
 
 -- Turns column mode on but headers off
 .mode column
-.headers on
+.headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -92,7 +92,7 @@ CREATE TABLE moviecast (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 -- TODO!
 INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('Batman Begins','2005','PG-13','Christopher Nolan');
 INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('The Dark Knight','2008','PG-13','Christopher Nolan');
-INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('The Dark Knight Rises','2012','PG-13','Christopher Nolan');
+INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('The Dark KnightRises','2012','PG-13','Christopher Nolan');
 
 INSERT INTO moviecast (MovieID, StarName, Charactar) VALUES ('1','Christian Bale','Bruce Wayne'),
      ('1','Michael Caine','Alfred'),
@@ -110,6 +110,7 @@ INSERT INTO moviecast (MovieID, StarName, Charactar) VALUES ('1','Christian Bale
     ('3','Joseph Gordon-Levitt','John Blake'),
     ('3','Anne Hathaway','Selina Kyle');                                  
 -- Prints a header for the movies output
+
 .print "Movies"
 .print "======"
 .print ""
@@ -132,5 +133,7 @@ FROM movie;
 
 -- The SQL statement for the cast output
 -- TODO!
-SELECT *
-FROM moviecast;
+SELECT m.MovieName, mc.StarName, mc.Charactar 
+from movie m
+join moviecast mc
+ON m.ID = mc.MovieID;
