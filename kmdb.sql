@@ -119,7 +119,7 @@ INSERT INTO moviecast (MovieID, StarName, Charactar) VALUES ('1','Christian Bale
 -- TODO!
 
 SELECT MovieName, Year, Rate, Director 
-FROM movie
+FROM movie;
 
 
 
@@ -132,3 +132,5 @@ FROM movie
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT *
+FROM moviecast;
