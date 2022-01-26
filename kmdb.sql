@@ -65,7 +65,7 @@
 
 -- Turns column mode on but headers off
 .mode column
-.headers off
+.headers on
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -74,12 +74,12 @@ DROP TABLE IF EXISTS moviecast;
 -- Create new tables, according to your domain model
 -- TODO!
 CREATE TABLE movie (ID INTEGER PRIMARY KEY AUTOINCREMENT, 
-					MoiveName TEXT NOT NULL,
+					MovieName TEXT NOT NULL,
 					Year TEXT,
 					Rate TEXT,
 					Director TEXT);
-                    
-CREATE TABLE moviecast (ID INTEGER PRIMARY KEY AUTOINCREMENT
+
+CREATE TABLE moviecast (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 					MovieID INTEGER NOT NULL, 
 					StarName TEXT,
 					Charactar TEXT,
@@ -90,14 +90,36 @@ CREATE TABLE moviecast (ID INTEGER PRIMARY KEY AUTOINCREMENT
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('Batman Begins','2005','PG-13','Christopher Nolan');
+INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('The Dark Knight','2008','PG-13','Christopher Nolan');
+INSERT INTO movie (MovieName, Year, Rate, Director) VALUES ('The Dark Knight Rises','2012','PG-13','Christopher Nolan');
 
+INSERT INTO moviecast (MovieID, StarName, Charactar) VALUES ('1','Christian Bale','Bruce Wayne'),
+     ('1','Michael Caine','Alfred'),
+    ('1','Liam Neeson','Ra''s Al Ghul'),
+    ('1','Katie Holmes','Rachel Dawes'),
+    ('1','Gary Oldman','Commissioner Gordon'),
+    ('2','Christian Bale','Bruce Wayne'),
+    ('2','Heath Ledger','Joker'),
+    ('2','Aaron Eckhart','Harvey Dent'),
+    ('2','Michael Caine','Alfred'),
+    ('2','Maggie Gyllenhaal','Rachel Dawes'),
+    ('3','Christian Bale','Bruce Wayne'),
+    ('3','Gary Oldman','Commissioner Gordon'),
+    ('3','Tom Hardy','Bane'),
+    ('3','Joseph Gordon-Levitt','John Blake'),
+    ('3','Anne Hathaway','Selina Kyle');                                  
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
 
+
 -- The SQL statement for the movies output
 -- TODO!
+
+
+
 
 -- Prints a header for the cast output
 .print ""
