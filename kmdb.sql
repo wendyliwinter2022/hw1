@@ -73,6 +73,19 @@ DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS moviecast;
 -- Create new tables, according to your domain model
 -- TODO!
+CREATE TABLE movie (ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+					MoiveName TEXT NOT NULL,
+					Year TEXT,
+					Rate TEXT,
+					Director TEXT);
+                    
+CREATE TABLE moviecast (ID INTEGER PRIMARY KEY AUTOINCREMENT
+					MovieID INTEGER NOT NULL, 
+					StarName TEXT,
+					Charactar TEXT,
+					FOREIGN KEY (MovieID) 
+						REFERENCES movie(ID) 
+						ON DELETE CASCADE);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
